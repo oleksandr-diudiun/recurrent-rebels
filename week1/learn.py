@@ -44,4 +44,4 @@ accuracy = Iris.evaluate()
 
 print(f"Accuracy: {accuracy :.2f}%")
 
-Iris.initializeStartRandomParameters()
+# Iris.initializeStartRandomParameters()

@@ -111,11 +111,8 @@ class Model:
         dWeights2 = (1 / m) * np.dot(forwardPropagationResults["ActivationFunction_A1"].T, dLinearTranformation_Z2)
         
         dbias2 = (1 / m) * np.sum(dLinearTranformation_Z2, axis=0, keepdims=True)
-        
         dLinearTranformation_Z1 = np.dot(dLinearTranformation_Z2, self.Weights2.T) * self.relu_derivative(forwardPropagationResults["LinearTranformation_Z1"])
-        
         dWeights1 = (1 / m) * np.dot(Learning_set_X.T, dLinearTranformation_Z1)
-        
         dbias1 = (1 / m) * np.sum(dLinearTranformation_Z1.to_numpy(), axis=0, keepdims=True)
 
         return {
